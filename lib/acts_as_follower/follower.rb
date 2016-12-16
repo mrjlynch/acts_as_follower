@@ -58,6 +58,8 @@ module ActsAsFollower #:nodoc:
         follows_scope = apply_options_to_scope(follows_scope, options)
       end
 
+      alias following all_follows
+
       # Returns the actual records which this instance is following.
       def all_following(options={})
         all_follows(options).collect{ |f| f.followable }
